@@ -12,37 +12,37 @@
           <el-checkbox v-model="item.completed" size="large" @change="markTodoCompleted(item)"></el-checkbox>
           <!-- todoitem内容 -->
           <span class="todo-list-item-content" :class="{'todo-list-item-content-completed': item.completed}"
-                v-html="item.content" @click="editTodoItem(item)"></span>
+                v-html="item.content"></span>
           <!-- todoitem操作 -->
           <span class="todo-item-oper">
               <i class="iconfont icon-edit" @click="editTodoItem(item)"></i>
               <i class="iconfont icon-del" @click="deleteTodoItem(index)"></i>
           </span>
         </div>
-        <!-- todoitem编辑 -->
-        <el-drawer
-            v-model="drawer"
-            size="70%"
-            title="编辑"
-            direction="rtl">
-          <template #default>
-            <div>
-              <el-input
-                  v-model="tempTodoContent"
-                  :rows="10"
-                  type="textarea"
-              />
-            </div>
-          </template>
-          <template #footer>
-            <div>
-              <el-button size="small" @click="drawer=false">取消</el-button>
-              <el-button type="primary" size="small" @click="ensuerEditTodo">确定</el-button>
-            </div>
-          </template>
-        </el-drawer>
       </div>
     </div>
+    <!-- todoitem编辑 -->
+    <el-drawer
+        v-model="drawer"
+        size="70%"
+        title="编辑"
+        direction="rtl">
+      <template #default>
+        <div>
+          <el-input
+              v-model="tempTodoContent"
+              :rows="10"
+              type="textarea"
+          />
+        </div>
+      </template>
+      <template #footer>
+        <div>
+          <el-button size="small" @click="drawer=false">取消</el-button>
+          <el-button type="primary" size="small" @click="ensuerEditTodo">确定</el-button>
+        </div>
+      </template>
+    </el-drawer>
   </div>
 </template>
 <script setup lang="ts">
@@ -60,7 +60,7 @@
   const drawer = ref(false)
   const tempTodoContent = ref('')
   let tempTodo = null
-  let date = ''
+  let date: string = ''
 
   onMounted(() => {
     date = route.params.date
