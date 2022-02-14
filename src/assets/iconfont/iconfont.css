@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 1581708 */
+  src: url('iconfont.woff2?t=1644766169639') format('woff2'),
+       url('iconfont.woff?t=1644766169639') format('woff'),
+       url('iconfont.ttf?t=1644766169639') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-rili:before {
+  content: "\e601";
+}
+
+.icon-del:before {
+  content: "\e8b6";
+}
+
+.icon-min:before {
+  content: "\e60f";
+}
+
+.icon-close:before {
+  content: "\eaf2";
+}
+
+.icon-jihua:before {
+  content: "\e679";
+}
+
+.icon-setting:before {
+  content: "\e60d";
+}
+
+.icon-gengduo:before {
+  content: "\e60a";
+}
+
+.icon-submit:before {
+  content: "\e61e";
+}
+
+.icon-editor:before {
+  content: "\e609";
+}
+
+.icon-preview:before {
+  content: "\e600";
+}
+
+.icon-note:before {
+  content: "\e605";
+}
+
+.icon-todo-o:before {
+  content: "\e74a";
+}
+
+.icon-todo-list:before {
+  content: "\e7a7";
+}
+
+.icon-todo-completed:before {
+  content: "\e75a";
+}
+
+.icon-notebook:before {
+  content: "\e60b";
+}
+
+.icon-todo1:before {
+  content: "\e607";
+}
+
+.icon-todo2:before {
+  content: "\e608";
+}
+
+.icon-sigin:before {
+  content: "\e6c3";
+}
+
+.icon-reback:before {
+  content: "\e649";
+}
+
+.icon-to-close:before {
+  content: "\e6d6";
+}
+
+.icon-to-close2:before {
+  content: "\e60e";
+}
+
+.icon-to-open:before {
+  content: "\e777";
+}
+
+.icon-right-arrow:before {
+  content: "\e670";
+}
+
+.icon-left-arrow:before {
+  content: "\e671";
+}
+
+.icon-maxmum:before {
+  content: "\e61a";
+}
+
+.icon-plus:before {
+  content: "\e7e5";
+}
+
+.icon-minimum:before {
+  content: "\e7e6";
+}
+
+.icon-check:before {
+  content: "\e7e8";
+}
+
+.icon-edit:before {
+  content: "\e7fd";
+}
+
+.icon-maxmum-bak:before {
+  content: "\e662";
+}
+
+.icon-user:before {
+  content: "\e606";
+}
+
+.icon-todo:before {
+  content: "\e625";
+}
+
+.icon-project:before {
+  content: "\e60c";
+}
+
+.icon-task:before {
+  content: "\eadc";
+}
+
+.icon-message:before {
+  content: "\e603";
+}
+

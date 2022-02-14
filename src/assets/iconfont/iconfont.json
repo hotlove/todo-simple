@@ -1,0 +1,254 @@
+{
+  "id": "1581708",
+  "name": "easy-do",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1718350",
+      "name": "日历28",
+      "font_class": "rili",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "11372693",
+      "name": "删除",
+      "font_class": "del",
+      "unicode": "e8b6",
+      "unicode_decimal": 59574
+    },
+    {
+      "icon_id": "393482",
+      "name": "最小化",
+      "font_class": "min",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "5387522",
+      "name": "关闭",
+      "font_class": "close",
+      "unicode": "eaf2",
+      "unicode_decimal": 60146
+    },
+    {
+      "icon_id": "15633349",
+      "name": "计划",
+      "font_class": "jihua",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
+      "icon_id": "4248853",
+      "name": "设置",
+      "font_class": "setting",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "14006865",
+      "name": "更多",
+      "font_class": "gengduo",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "8823473",
+      "name": "提交",
+      "font_class": "submit",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "6023592",
+      "name": "编辑",
+      "font_class": "editor",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "12344493",
+      "name": "预览",
+      "font_class": "preview",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "2380617",
+      "name": "笔记本",
+      "font_class": "note",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "1177003",
+      "name": "todo-o",
+      "font_class": "todo-o",
+      "unicode": "e74a",
+      "unicode_decimal": 59210
+    },
+    {
+      "icon_id": "11114098",
+      "name": "TODO",
+      "font_class": "todo-list",
+      "unicode": "e7a7",
+      "unicode_decimal": 59303
+    },
+    {
+      "icon_id": "4389575",
+      "name": "TODO",
+      "font_class": "todo-completed",
+      "unicode": "e75a",
+      "unicode_decimal": 59226
+    },
+    {
+      "icon_id": "4095549",
+      "name": "笔记本",
+      "font_class": "notebook",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "1129259",
+      "name": "todo",
+      "font_class": "todo1",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "4695763",
+      "name": "todo",
+      "font_class": "todo2",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "6694049",
+      "name": "签到",
+      "font_class": "sigin",
+      "unicode": "e6c3",
+      "unicode_decimal": 59075
+    },
+    {
+      "icon_id": "12859534",
+      "name": "撤销",
+      "font_class": "reback",
+      "unicode": "e649",
+      "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "4031889",
+      "name": "最小化",
+      "font_class": "to-close",
+      "unicode": "e6d6",
+      "unicode_decimal": 59094
+    },
+    {
+      "icon_id": "5930263",
+      "name": "最小化",
+      "font_class": "to-close2",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "3708455",
+      "name": "最大化",
+      "font_class": "to-open",
+      "unicode": "e777",
+      "unicode_decimal": 59255
+    },
+    {
+      "icon_id": "7352827",
+      "name": "右向箭头",
+      "font_class": "right-arrow",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "7352828",
+      "name": "左向箭头",
+      "font_class": "left-arrow",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "7160395",
+      "name": "最大化",
+      "font_class": "maxmum",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "12818665",
+      "name": "plus",
+      "font_class": "plus",
+      "unicode": "e7e5",
+      "unicode_decimal": 59365
+    },
+    {
+      "icon_id": "12818667",
+      "name": "reduce",
+      "font_class": "minimum",
+      "unicode": "e7e6",
+      "unicode_decimal": 59366
+    },
+    {
+      "icon_id": "12818682",
+      "name": "check",
+      "font_class": "check",
+      "unicode": "e7e8",
+      "unicode_decimal": 59368
+    },
+    {
+      "icon_id": "1917124",
+      "name": "编辑",
+      "font_class": "edit",
+      "unicode": "e7fd",
+      "unicode_decimal": 59389
+    },
+    {
+      "icon_id": "675257",
+      "name": "最大化",
+      "font_class": "maxmum-bak",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "1995617",
+      "name": "好友",
+      "font_class": "user",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "2589945",
+      "name": "todo-task",
+      "font_class": "todo",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "448351",
+      "name": "项目",
+      "font_class": "project",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "3378483",
+      "name": "任务",
+      "font_class": "task",
+      "unicode": "eadc",
+      "unicode_decimal": 60124
+    },
+    {
+      "icon_id": "5213510",
+      "name": "消息",
+      "font_class": "message",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    }
+  ]
+}
