@@ -11,6 +11,11 @@ const routes: Array<RouteRecordRaw> = [
         path: 'todo/:date',
         name: 'todo',
         component: () => import('@/views/todo/Todo.vue')
+      },
+      {
+        path: 'note',
+        name: 'note',
+        component: () => import('@/views/note/Note.vue')
       }
     ]
   }

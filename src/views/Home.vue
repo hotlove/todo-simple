@@ -15,12 +15,20 @@
 
     <!-- 底部 -->
     <div class="todo-bottom">
-      <span class="todo-bottom-item iconfont icon-rili" @click="changeDate"></span>
-      <el-date-picker v-model="choseDate"
-                      type="date"
-                      popper-class="todo-bottom-canlendar">
-      </el-date-picker>
+      <span class="todo-bottom-item" @click="changeDate">
+        <el-icon :size="17" :color="isClickCanlender ?'#409EFF' : '#1f2d3d' "><calendar /></el-icon>
+      </span>
+      <span style="margin-left: 10px;" class="todo-bottom-item" @click="goNote">
+        <el-icon :size="17" :color="isClickGoNote ?'#409EFF' : '#1f2d3d'"><document /></el-icon>
+      </span>
+
+
     </div>
+
+    <el-date-picker v-model="choseDate"
+                    type="date"
+                    popper-class="todo-bottom-canlendar">
+    </el-date-picker>
 
 
   </div>
@@ -47,6 +55,9 @@ import {getCurrentInstance, onMounted, ref, watch} from "vue";
 
   // 控制展示日期选择框
   let showDateModal = false
+
+  const isClickCanlender = ref(false)
+  const isClickGoNote = ref(false)
 
   // 日期框选择的日期
   const choseDate = ref(proxy.$moment().format("YYYY/MM/DD"))
@@ -84,10 +95,12 @@ import {getCurrentInstance, onMounted, ref, watch} from "vue";
 
   // 点击日历icon触发
   const changeDate = () => {
+    isClickCanlender.value = !isClickCanlender.value
+    router.push({name: 'todo', params: {date: routeDate}})
     if (!showDateModal) {
-      showDateChosePaper()
+      showDateChosePaper();
     } else {
-      closeDateChosePaper()
+      closeDateChosePaper();
     }
   }
 
@@ -105,10 +118,20 @@ import {getCurrentInstance, onMounted, ref, watch} from "vue";
     showDateModal = false
   }
 
-
+  //----------------------------------------------------------
+  const goNote = () => {
+    router.push({name: 'note'})
+  }
 </script>
 
 <style lang="scss">
+  .home {
+    .el-input {
+      display: none !important;
+      //visibility:hidden;
+      //width: 1px;
+    }
+  }
   .todo-header {
     height: 35px;
     line-height: 35px;
@@ -160,11 +183,7 @@ import {getCurrentInstance, onMounted, ref, watch} from "vue";
     line-height: 30px;
     border-top: 1px solid var(--el-border-color-base);
     padding: 0px 10px;
-    .el-input {
-      display: none !important;
-      //visibility:hidden;
-      //width: 1px;
-    }
+
 
     .todo-bottom-item {
       font-size: 20px;
