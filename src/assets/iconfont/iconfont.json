@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "16384693",
+      "name": "便签",
+      "font_class": "bianqian",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "6834895",
+      "name": "文件-笔记本",
+      "font_class": "wj-bjb",
+      "unicode": "e77f",
+      "unicode_decimal": 59263
+    },
+    {
       "icon_id": "1718350",
       "name": "日历28",
       "font_class": "rili",
