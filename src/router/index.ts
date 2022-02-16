@@ -15,7 +15,19 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'note',
         name: 'note',
-        component: () => import('@/views/note/Note.vue')
+        component: () => import('@/views/note/Note.vue'),
+        children: [
+          {
+            path: "notelist",
+            name: "notelist",
+            component: () => import('@/views/note/NoteList.vue')
+          },
+          {
+            path: "notedetail/:title",
+            name: "notedetail",
+            component: () => import('@/views/note/NoteDetail.vue')
+          }
+        ]
       }
     ]
   }

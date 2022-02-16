@@ -46,7 +46,7 @@
   </div>
 </template>
 <script setup lang="ts">
-  import {ref, onMounted, reactive} from 'vue'
+  import {ref, onMounted} from 'vue'
   import {TodoItemEdiable, TodoItemProperty} from "@/domain/TodoItem";
   import {NeDBExample} from "@/dbutil/nedbutil/NeDBExample";
   import {todoItemMapper} from "@/dbutil";
@@ -165,9 +165,10 @@
   }
 
   .todo-list {
-    height: calc(100vh - 97px);
+    height: calc(100vh - 110px);
     overflow: hidden;
     overflow-y: auto;
+    padding-top: 10px;
 
     .todo-list-item {
       -webkit-user-select: text;

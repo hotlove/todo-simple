@@ -2,7 +2,12 @@
   <div class="home">
     <!-- 头部 -->
     <div class="todo-header">
-      <span class="header-drag" style="color: #fff; font-size: 12px">
+      <el-date-picker v-model="choseDate"
+                      type="date"
+                      popper-class="todo-bottom-canlendar">
+      </el-date-picker>
+      <span class="header-drag"></span>
+      <span style="cursor:pointer; color: #fff; font-size: 12px" @click="changeDate">
         {{titleDateText}}
       </span>
       <span @click="closeApp" class="header-item header-item-close iconfont icon-close"></span>
@@ -15,22 +20,13 @@
 
     <!-- 底部 -->
     <div class="todo-bottom">
-      <span class="todo-bottom-item" @click="changeDate">
-        <el-icon :size="17" :color="isClickCanlender ?'#409EFF' : '#1f2d3d' "><calendar /></el-icon>
+      <span class="todo-bottom-item" @click="goTodo">
+        <el-icon :size="17" :color="routerIndex === 0 ?'#409EFF' : '#464545' "><calendar /></el-icon>
       </span>
       <span style="margin-left: 10px;" class="todo-bottom-item" @click="goNote">
-        <el-icon :size="17" :color="isClickGoNote ?'#409EFF' : '#1f2d3d'"><document /></el-icon>
+        <el-icon :size="17" :color="routerIndex === 1 ?'#409EFF' : '#464545'"><document /></el-icon>
       </span>
-
-
     </div>
-
-    <el-date-picker v-model="choseDate"
-                    type="date"
-                    popper-class="todo-bottom-canlendar">
-    </el-date-picker>
-
-
   </div>
 </template>
 
@@ -56,8 +52,7 @@ import {getCurrentInstance, onMounted, ref, watch} from "vue";
   // 控制展示日期选择框
   let showDateModal = false
 
-  const isClickCanlender = ref(false)
-  const isClickGoNote = ref(false)
+  const routerIndex = ref(0)
 
   // 日期框选择的日期
   const choseDate = ref(proxy.$moment().format("YYYY/MM/DD"))
@@ -93,10 +88,13 @@ import {getCurrentInstance, onMounted, ref, watch} from "vue";
     }
   }
 
+  const goTodo = () => {
+    routerIndex.value = 0
+    router.push({name: 'todo', params: {date: routeDate}})
+  }
+
   // 点击日历icon触发
   const changeDate = () => {
-    isClickCanlender.value = !isClickCanlender.value
-    router.push({name: 'todo', params: {date: routeDate}})
     if (!showDateModal) {
       showDateChosePaper();
     } else {
@@ -106,32 +104,26 @@ import {getCurrentInstance, onMounted, ref, watch} from "vue";
 
   // 展示日期选择框
   const showDateChosePaper = () => {
-    const element = document.getElementsByClassName('todo-bottom-canlendar').item(0)
-    element.style.cssText = 'z-index: 2037; display: block !important; position: absolute; left: 5px; bottom: 25px; margin: 0px;'
+    const element: any = document.getElementsByClassName('todo-bottom-canlendar').item(0)
+    element.style.cssText = 'z-index: 2037; display: block !important; position: absolute; left: 5px; top: 45px; margin: 0px;'
     showDateModal = true
   }
 
   // 关闭日期选择框
   const closeDateChosePaper = () => {
-    const element = document.getElementsByClassName('todo-bottom-canlendar').item(0)
+    const element: any = document.getElementsByClassName('todo-bottom-canlendar').item(0)
     element.style.cssText = 'display: none !important; z-index: -1;'
     showDateModal = false
   }
 
   //----------------------------------------------------------
   const goNote = () => {
+    routerIndex.value = 1
     router.push({name: 'note'})
   }
 </script>
 
 <style lang="scss">
-  .home {
-    .el-input {
-      display: none !important;
-      //visibility:hidden;
-      //width: 1px;
-    }
-  }
   .todo-header {
     height: 35px;
     line-height: 35px;
@@ -139,11 +131,18 @@ import {getCurrentInstance, onMounted, ref, watch} from "vue";
     padding: 0 5px 0 5px;
     position: relative;
 
+    .el-input {
+      display: none !important;
+      //visibility:hidden;
+      //width: 1px;
+    }
+
     .header-drag {
       display: inline-block;
-      width: calc(100vw - 60px);
+      width: calc(100vw - 130px);
       position: absolute;
-      height: 30px;
+      height: 32px;
+      left: 80px;
       -webkit-app-region: drag;
     }
 
@@ -192,8 +191,9 @@ import {getCurrentInstance, onMounted, ref, watch} from "vue";
   }
   .todo-bottom-canlendar {
     //display: block !important;
-    .el-popper__arrow {
-      display: none;
-    }
+    //.el-popper__arrow {
+    //  display: none;
+    //}
+    box-shadow: 0 2px 12px 5px rgba(0,0,0,0.1) !important;
   }
 </style>
