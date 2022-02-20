@@ -23,7 +23,7 @@ const routes: Array<RouteRecordRaw> = [
             component: () => import('@/views/note/NoteList.vue')
           },
           {
-            path: "notedetail/:title",
+            path: "notedetail/:id",
             name: "notedetail",
             component: () => import('@/views/note/NoteDetail.vue')
           }

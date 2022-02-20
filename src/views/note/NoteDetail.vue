@@ -4,7 +4,7 @@
       <span style="cursor: pointer">
         <el-icon @click="goBack"><arrow-left /></el-icon>
       </span>
-      <span style="margin-left: 10px; font-size: 17px">{{ title}}</span>
+      <span style="margin-left: 10px; font-size: 15px">{{ title}}</span>
     </div>
     <el-divider></el-divider>
     <div class="note-detail-content">
@@ -19,39 +19,52 @@
   </div>
 </template>
 <script setup lang="ts">
-  import Vditor from 'vditor'
-  import 'vditor/dist/index.css'
-  import {onMounted, ref} from "vue";
-  import _ from "lodash";
-  import {useRoute, useRouter} from "vue-router";
+import Vditor from 'vditor'
+import 'vditor/dist/index.css'
+import {onMounted, ref} from "vue";
+import _ from "lodash";
+import {useRoute, useRouter} from "vue-router";
+import {noteFileMapper} from "@/dbutil";
+import {NoteFile, NoteFileProperty} from "@/domain/NoteFile";
+import {NeDBExample} from "@/dbutil/nedbutil/NeDBExample";
 
-  const route = useRoute()
+const route = useRoute()
   const router = useRouter()
 
   const title = ref('')
   const textarea = ref('')
 
   const contentEditor = ref("");
-
+  let fileId = ''
+  let noteFileDetail: NoteFile
 
   onMounted(() => {
-    title.value = route.params.title
+    fileId = route.params.id
 
-    contentEditor.value = new Vditor("vditor", {
+    noteFileMapper.getNoteFileById(fileId).then(((value: NoteFile)=> {
+      noteFileDetail = value
+      title.value = noteFileDetail.name
+      // 初始化编辑器
+      initVditor(contentEditor.value, noteFileDetail.content)
+    }))
+  })
+
+  const initVditor = (editor: any, initContent: string) => {
+    editor = new Vditor("vditor", {
       height: 'auto',
       mode: 'ir',
       toolbarConfig: {
         pin: true,
       },
       toolbar: ['headings', 'bold', 'italic', 'strike', 'list', 'ordered-list', 'quote','check', 'link', 'code', 'inline-code', 'code-theme', 'content-theme', 'table',
-        {
-          name: 'save',
-          tipPosition: 's',
-          tip: '保存',
-          className: '',
-          icon: '<span class="note-detail-title-item iconfont icon-baocun"></span>',
-          click: saveContent,
-        },
+        // {
+        //   name: 'save',
+        //   tipPosition: 's',
+        //   tip: '保存',
+        //   className: '',
+        //   icon: '<span class="note-detail-title-item iconfont icon-baocun"></span>',
+        //   click: saveContent,
+        // },
         {
           name: 'del',
           tipPosition: 's',
@@ -65,20 +78,32 @@
       cache: {
         enable: false
       },
-      after: () => {},
+      after: () => {
+        if (initContent != null && initContent !== '') {
+          editor.setValue(initContent)
+        }
+      },
       // 这里写上传
       upload: {
       },
       input: inputContent
     })
-  })
+  }
 
   const goBack = () => {
     router.back()
   }
 
   const inputContent = _.debounce((value) => {
-    console.log(value)
+
+    let example = new NeDBExample();
+    example.createCriteria().eq(NoteFileProperty.id, noteFileDetail.id);
+    noteFileDetail.content = value
+    noteFileMapper.update(example, noteFileDetail).then((number) => {
+      console.log("update sucess", noteFileDetail)
+    }).catch((err: Error) => {
+      console.log(err)
+    });
   }, 1000)
 
   const saveContent = () => {
@@ -86,7 +111,15 @@
   }
 
   const delContent = () => {
-    console.log('删除')
+    let neDBExample = new NeDBExample();
+    neDBExample.createCriteria().eq(NoteFileProperty.id, noteFileDetail.id);
+
+    noteFileMapper.delete(neDBExample).then((number) => {
+      if (number > 0) {
+        console.log('删除笔记成功')
+      }
+      router.back()
+    });
   }
 </script>
 <style lang="scss">
