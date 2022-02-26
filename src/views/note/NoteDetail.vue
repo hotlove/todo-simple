@@ -56,7 +56,16 @@ const route = useRoute()
       toolbarConfig: {
         pin: true,
       },
-      toolbar: ['headings', 'bold', 'italic', 'strike', 'list', 'ordered-list', 'quote','check', 'link', 'code', 'inline-code', 'code-theme', 'content-theme', 'table',
+      toolbar: [
+        // {
+        //   name: 'back',
+        //   tipPosition: 's',
+        //   icon: '<span class="iconfont icon-left-arrow"></span>',
+        //   click: () => {
+        //     router.back()
+        //   },
+        // },
+        'headings', 'bold', 'italic', 'strike', 'list', 'ordered-list', 'quote','check', 'link', 'code', 'inline-code', 'table',
         // {
         //   name: 'save',
         //   tipPosition: 's',

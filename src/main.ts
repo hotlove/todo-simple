@@ -9,6 +9,7 @@ import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import '@/helper/moment-locale'
 import naive from "@/helper/component-ui";
 import moment from "moment";
+import vueRightMenu from "vue-right-click-menu-next";
 moment.locale('zh-ch');
 
 const app = createApp(App)
@@ -26,4 +27,5 @@ app.use(store)
 		locale: zhCn,
 	})
 	.use(naive)
+	.use(vueRightMenu)
 	.mount('#app')

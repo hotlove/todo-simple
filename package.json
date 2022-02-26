@@ -33,6 +33,7 @@
     "vditor": "^3.8.11",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
+    "vue-right-click-menu-next": "^1.1.1",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
   },

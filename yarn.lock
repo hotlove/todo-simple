@@ -11706,6 +11706,11 @@ vue-loader@^15.9.2:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
+vue-right-click-menu-next@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npmmirror.com/vue-right-click-menu-next/-/vue-right-click-menu-next-1.1.1.tgz#219053f421cf03eacd2b3b8c1054de1b427c1672"
+  integrity sha512-4d+Mkx6dSt9fLbiC/aMi7I8jBYUPCPh424tPPZUvLjZOuSJH4bRfZ6VtFx1EJ3EiI8QGyzWp2jVzGYSCv9hEVQ==
+
 vue-router@^4.0.0-0:
   version "4.0.12"
   resolved "https://registry.npmmirror.com/vue-router/-/vue-router-4.0.12.tgz#8dc792cddf5bb1abcc3908f9064136de7e13c460"
