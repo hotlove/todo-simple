@@ -26,12 +26,15 @@
       <span style="margin-left: 10px;" class="todo-bottom-item" @click="goNote">
         <el-icon :size="17" :color="routerIndex === 1 ?'#409EFF' : '#464545'"><document /></el-icon>
       </span>
+      <span style="margin-left: 10px;" class="todo-bottom-item" @click="goMeeting">
+        <el-icon :size="17" :color="routerIndex === 2 ?'#409EFF' : '#464545'"><clock /></el-icon>
+      </span>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import {getCurrentInstance, onMounted, ref, watch} from "vue";
+  import {getCurrentInstance, onMounted, ref, watch} from "vue";
   import {APP_CLOSE_EVENT, APP_MIN_EVENT} from "@/common/EventType";
   import { ipcRenderer } from 'electron';
   import {useRouter} from "vue-router";
@@ -50,7 +53,7 @@ import {getCurrentInstance, onMounted, ref, watch} from "vue";
   titleDateText.value =  proxy.$moment().format("MM/DD dddd")
 
   // 控制展示日期选择框
-  let showDateModal = false
+  let showDateModal = false 
 
   const routerIndex = ref(0)
 
@@ -120,6 +123,13 @@ import {getCurrentInstance, onMounted, ref, watch} from "vue";
   const goNote = () => {
     routerIndex.value = 1
     router.push({name: 'note'})
+  }
+
+  //--------------------------------------------------------
+  const goMeeting = () => {
+    routerIndex.value = 2
+    router.push({name: 'meeting'})
+
   }
 </script>
 

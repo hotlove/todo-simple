@@ -74,15 +74,15 @@ const route = useRoute()
         //   icon: '<span class="note-detail-title-item iconfont icon-baocun"></span>',
         //   click: saveContent,
         // },
-        {
-          name: 'del',
-          tipPosition: 's',
-          tip: '删除',
-          className: '',
-          icon: '<span class="note-detail-title-item iconfont icon-del"></span>',
-          // icon: 'note-detail-title-item iconfont icon-baocun',
-          click: delContent,
-        }
+        // {
+        //   name: 'del',
+        //   tipPosition: 's',
+        //   tip: '删除',
+        //   className: '',
+        //   icon: '<span class="note-detail-title-item iconfont icon-del"></span>',
+        //   // icon: 'note-detail-title-item iconfont icon-baocun',
+        //   click: delContent,
+        // }
       ],
       cache: {
         enable: false

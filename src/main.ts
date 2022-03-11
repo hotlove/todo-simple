@@ -23,9 +23,7 @@ app.config.globalProperties['$moment'] = moment
 
 app.use(store)
 	.use(router)
-	.use(ElementPlus, {
-		locale: zhCn,
-	})
+	.use(ElementPlus, {locale: zhCn,})
 	.use(naive)
 	.use(vueRightMenu)
 	.mount('#app')

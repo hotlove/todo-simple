@@ -52,7 +52,7 @@
     noteFileMapper.find(neDBExample).then((notefiles: Array<NoteFile>) => {
       if (CommonUtil.collectionNotEmpty(notefiles)){
         console.log(notefiles)
-        noteFileList.value = notefiles.sort((a: NoteFile, b: NoteFile) => a.createdDate < b.createdDate);
+        noteFileList.value = notefiles.sort((a: any, b: any) => a.createdDate < b.createdDate);
       } else {
         noteFileList.value = []
       }
