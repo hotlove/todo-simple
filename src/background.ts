@@ -20,10 +20,14 @@ protocol.registerSchemesAsPrivileged([
 async function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
-    width: 380,
-    height: 437,
-    frame: false,
-    opacity: 1,
+    width: 910,
+    minWidth: 910,
+    height: 600,
+    minHeight: 600,
+    // opacity: 0.5,
+    frame: false, //设置为无边框
+    transparent: false, //使用透明窗口
+    backgroundColor: '#00000000', //设置背景色为全透明
     webPreferences: {
       
       // Use pluginOptions.nodeIntegration, leave this alone

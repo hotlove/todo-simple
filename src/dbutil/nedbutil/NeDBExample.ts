@@ -1,8 +1,13 @@
 import { Criteria, CriteriaType } from './Criteria';
 
 class NeDBExample {
+    public static DESC: number = -1
+    public static ASC: number = 1
 
     private allCriteriaList: Criteria[] = [];
+
+    private sort: number = NeDBExample.ASC
+    private field: any = null
 
     public createCriteria(): Criteria {
         const criteria = new Criteria();
@@ -12,6 +17,11 @@ class NeDBExample {
 
     public or(): Criteria {
         return this.createCriteria();
+    }
+
+    public setSort(field: string, sort: number) {
+        this.field = field
+        this.sort = sort
     }
 
     public getCriteria(): CriteriaType {
@@ -46,6 +56,10 @@ class NeDBExample {
             }
         }
         return param;
+    }
+
+    public getSort(): {field: string, sort: number} {
+        return {field: this.field, sort: this.sort}
     }
 }
 export {NeDBExample};

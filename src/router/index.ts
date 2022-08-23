@@ -13,6 +13,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/todo/Todo.vue')
       },
       {
+        path: 'todo-list',
+        name: 'todo-list',
+        component: () => import('@/views/todo/TodoList.vue')
+      },
+      {
         path: 'note',
         name: 'note',
         component: () => import('@/views/note/Note.vue'),

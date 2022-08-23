@@ -55,6 +55,7 @@ abstract class DaoMapper<T> {
     // 查询文档
     public find(example: NeDBExample = new NeDBExample(), colums: string[] = [], page = 1, pagesize = 0): any {
         const criteria = example.getCriteria();
+        const {field, sort} = example.getSort()
 
         let projections: any = null;
         if (CommonUtil.collectionNotEmpty(colums)) {
@@ -65,13 +66,33 @@ abstract class DaoMapper<T> {
         }
 
         if (pagesize === 0) {
-            return projections != null
-                ? this.dataStore.find(criteria, projections)
-                : this.dataStore.find(criteria);
+            if (projections != null) {
+                if (example.getSort().sort !== null) {
+                    return this.dataStore.find(criteria, projections).sort({field: sort})
+                } else {
+                    return this.dataStore.find(criteria, projections)
+                }
+            } else {
+                if (example.getSort().sort !== null) {
+                    return this.dataStore.find(criteria).sort({field: sort})
+                } else {
+                    return this.dataStore.find(criteria)
+                }
+            }
         } else {
-            return projections != null
-                ? this.dataStore.find(criteria, projections).skip((page - 1) * pagesize).limit(pagesize)
-                : this.dataStore.find(criteria).skip((page - 1) * pagesize).limit(pagesize);
+            if (projections != null) {
+                if (example.getSort().sort !== null) {
+                    return this.dataStore.find(criteria, projections).sort({field: sort}).skip((page - 1) * pagesize).limit(pagesize)
+                } else {
+                    return this.dataStore.find(criteria, projections).skip((page - 1) * pagesize).limit(pagesize);
+                }
+            } else {
+                if (example.getSort().sort !== null) {
+                    return this.dataStore.find(criteria).sort({field: sort}).skip((page - 1) * pagesize).limit(pagesize)
+                } else {
+                    return this.dataStore.find(criteria).skip((page - 1) * pagesize).limit(pagesize);
+                }
+            }
         }
     }
     // 子方法用于获取本地数据库名称
